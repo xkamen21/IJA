@@ -3,7 +3,7 @@
     Aplikace pro zobrazení linek hromadné dopravy a sledování jejich pohybu
 
 ### Autoři:
-    Daniel Kamenický (xkamen21), Vojtěch Olej (xolejv00)
+    Daniel Kamenický (xkamen21)
 
 ### Popis:
     Aplikace po spuštění načte mapu. Mapa se skládá z ulic, zastávek a vozidel. Dále se v aplikaci vyskytují jednotlivé linky s konkrétním rozpisem výjezdů.
