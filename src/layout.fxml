@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="791.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.kamenak.cz.arcas.ija.projekt.MainController">
+   <center>
+      <ScrollPane pannable="true" prefHeight="520.0" prefWidth="688.0" BorderPane.alignment="CENTER">
+         <Group>
+            <Pane fx:id="content" onScroll="#Zoom_methode" prefHeight="528.0" prefWidth="897.0"/>
+         </Group>
+      </ScrollPane>
+   </center>
+   <right>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <Slider fx:id="changedTime" layoutX="13.0" layoutY="70.0" min="1.0" onMouseReleased="#timeChange_method"
+                 prefHeight="24.0" prefWidth="166.0" AnchorPane.topAnchor="70.0"/>
+         <Button layoutX="36.0" layoutY="139.0" mnemonicParsing="false" onAction="#increaseDelay" prefHeight="26.0"
+                 prefWidth="120.0" text="Delay++" AnchorPane.topAnchor="139.0"/>
+         <Button layoutX="36.0" layoutY="176.0" mnemonicParsing="false" onAction="#resetDelay" prefWidth="120.0"
+                 text="Reset Delay" AnchorPane.topAnchor="176.0"/>
+         <Button layoutX="36.0" layoutY="212.0" mnemonicParsing="false" onAction="#decreaseDelay" prefWidth="120.0"
+                 text="Delay--" AnchorPane.topAnchor="212.0"/>
+         <Text layoutX="35.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time Speed Setter"
+               AnchorPane.topAnchor="42.0"/>
+         <Text layoutX="55.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delay Setter"
+               AnchorPane.topAnchor="107.93310546875"/>
+         <Button layoutX="36.0" layoutY="248.0" mnemonicParsing="false" onAction="#unmarkedStreets" prefWidth="120.0"
+                 text="Unmark Streets" AnchorPane.topAnchor="248.0"/>
+         <TextField fx:id="timeField" editable="false" layoutX="5.0" layoutY="496.0" prefHeight="26.0" prefWidth="189.0"
+                    AnchorPane.bottomAnchor="80.0">
+            <font>
+               <Font size="15.0"/>
+            </font>
+         </TextField>
+         <Spinner fx:id="hourSpinner" layoutX="6.0" layoutY="555.0" prefWidth="60.0" AnchorPane.bottomAnchor="30.0"/>
+         <Spinner fx:id="minuteSpinner" layoutX="71.0" layoutY="555.0" prefHeight="26.0" prefWidth="60.0"
+                  AnchorPane.bottomAnchor="30.0"/>
+         <Spinner fx:id="secondSpinner" layoutX="136.0" layoutY="555.0" prefHeight="26.0" prefWidth="60.0"
+                  AnchorPane.bottomAnchor="30.0"/>
+         <Button layoutX="6.0" layoutY="590.0" mnemonicParsing="false" onAction="#setNewTime" prefHeight="26.0"
+                 prefWidth="189.0" text="Set Time" AnchorPane.bottomAnchor="0.0"/>
+         <Text layoutX="16.0" layoutY="542.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hours"
+               AnchorPane.bottomAnchor="60.0"/>
+         <Text layoutX="74.0" layoutY="543.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Minutes"
+               AnchorPane.bottomAnchor="60.0"/>
+         <Text layoutX="139.0" layoutY="543.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seconds"
+               AnchorPane.bottomAnchor="60.0"/>
+         <TextField fx:id="streetName" editable="false" layoutX="11.0" layoutY="290.0" prefHeight="26.0"
+                    prefWidth="176.0" AnchorPane.topAnchor="290.0"/>
+         <Text layoutX="82.0" layoutY="413.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TIME"
+               AnchorPane.bottomAnchor="120.0"/>
+         <TextField fx:id="delayField" editable="false" layoutX="11.0" layoutY="326.0" prefHeight="26.0"
+                    prefWidth="176.0" AnchorPane.topAnchor="330.0"/>
+      </AnchorPane>
+   </right>
+   <bottom>
+      <AnchorPane maxWidth="1100.0" prefHeight="261.0" prefWidth="1084.0" BorderPane.alignment="CENTER">
+         <TextArea fx:id="linkInfo" editable="false" layoutX="14.0" layoutY="30.0" prefHeight="213.0" prefWidth="530.0"
+                   AnchorPane.leftAnchor="14.0"/>
+         <TextArea fx:id="timeTable" editable="false" layoutX="550.0" layoutY="30.0" prefHeight="213.0"
+                   prefWidth="530.0" AnchorPane.rightAnchor="14.0"/>
+         <Text layoutX="222.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INFO ABOUT LINK"
+               AnchorPane.leftAnchor="222.0"/>
+         <Text layoutX="739.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TIME TABLE FROM START"
+               AnchorPane.rightAnchor="196.17041015625"/>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

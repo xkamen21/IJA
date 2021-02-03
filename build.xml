@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="IJA-projekt" default="compile">
+  <property name="src.dir" location="src/cz/kamenak/cz/arcas/ija/projekt"/>
+  <property name="build.dir" location="build"/>
+  <property name="dest.dir" location="dest"/>
+  <property name="doc.dir" location="doc"/>
+  <property name="lib.dir" location="lib"/>
+  <property name="res.dir" location="src"/>
+  <property name="jar.name" value="ija-app"/>
+
+  <path id="classpath">
+    <pathelement location="${lib.dir}/json-20190722.jar"/>
+  </path>
+
+
+  <target name="clean">
+    <delete dir="${build.dir}"/>
+    <delete dir="${dest.dir}"/>
+  </target>
+  <target name="createFileStructure">
+    <mkdir dir="${build.dir}"/>
+    <mkdir dir="${dest.dir}"/>
+  </target>
+
+
+  <target name="compile" depends="clean, createFileStructure">
+    <javac srcdir="${src.dir}" destdir="${build.dir}">
+      <classpath>
+        <path refid="classpath" />
+      </classpath>
+    </javac>
+    <jar destfile="${dest.dir}\${jar.name}.jar" basedir="${build.dir}">
+      <fileset dir="${res.dir}"/>
+      <manifest>
+        <attribute name="Main-Class" value="cz.kamenak.cz.arcas.ija.projekt.Main"/>
+      </manifest>
+      <zipgroupfileset dir="${lib.dir}" includes="**/*.jar"/>
+    </jar>
+  </target>
+
+  <target name="run">
+    <java jar="${dest.dir}/${jar.name}.jar" fork="true"/>
+  </target>
+</project>
